@@ -6,9 +6,10 @@ var _ = require('lodash');
 
 var Generator = (function () {
 
-    function Generator(swaggerfile, outputpath) {
+    function Generator(swaggerfile, outputpath, templatepath) {
         this._swaggerfile = swaggerfile;
         this._outputPath = outputpath;
+        this._templatePath = templatepath;
     }
 
     Generator.prototype.Debug = false;
@@ -23,9 +24,9 @@ var Generator = (function () {
         this.LogMessage('Reading Mustache templates');
 
         this.templates = {
-            'class': fs.readFileSync(__dirname + '/../templates/angular2-service.mustache', 'utf-8'),
-            'model': fs.readFileSync(__dirname + '/../templates/angular2-model.mustache', 'utf-8'),
-            'models_export': fs.readFileSync(__dirname + '/../templates/angular2-models-export.mustache', 'utf-8')
+            'class': fs.readFileSync(__dirname + '/' + this._templatePath + '/angularjs-service.mustache', 'utf-8'),
+            'model': fs.readFileSync(__dirname + '/' + this._templatePath + '/angularjs-model.mustache', 'utf-8'),
+            'models_export': fs.readFileSync(__dirname + '/' + this._templatePath + '/angularjs-models-export.mustache', 'utf-8')
         };
 
         this.LogMessage('Creating Mustache viewModel');

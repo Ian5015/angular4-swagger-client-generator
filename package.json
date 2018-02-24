@@ -1,28 +1,27 @@
 {
-  "name": "angular4-swagger-client-generator",
+  "name": "hocho",
   "version": "0.1.14",
-  "description": "Angular 4/5 REST API client generator from Swagger JSON with camel case settings",
-  "homepage": "https://github.com/lotjomik/angular4-swagger-client-generator",
+  "description": "Angular 1 REST API client generator from Swagger JSON with camel case settings",
+  "homepage": "https://github.com/Ian5015/hocho",
   "main": "index.js",
   "bin": {
-    "a4apigen": "./bin/a4apigen.js"
+    "hocho": "./bin/hocho.js"
   },
   "author": {
-    "name": "Mika Lötjönen",
-    "email": "mika.lotjonen@tieto.com"
+    "name": "Timothy Ian Munnerley",
+    "email": "Ian5015@live.com"
   },
   "bugs": {
-    "url": "https://github.com/lotjomik/angular4-swagger-client-generator/issues"
+    "url": "https://github.com/Ian5015/hocho/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:lotjomik/angular4-swagger-client-generator.git"
+    "url": "git@github.com:Ian5015/hocho.git"
   },
   "keywords": [
     "swagger",
     "rest",
-    "angular4",
-    "angular5",
+    "angularjs",
     "angular",
     "scaffolding",
     "webapi",
@@ -32,7 +31,7 @@
   ],
   "license": "Apache-2.0",
   "scripts": {
-    "a4apigen": "a4apigen -s swagger.json",
+    "hocho": "hocho -s swagger.json",
     "build": "gulp"
   },
   "dependencies": {

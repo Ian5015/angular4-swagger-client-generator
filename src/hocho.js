@@ -6,11 +6,12 @@
  * @author Michal Krchnavy <michal@krchnavy.sk>
  */
 var optimist = require('optimist')
-    .usage('Usage: a4apigen -s path/to/swagger.json')
+    .usage('Usage: hocho -s path/to/swagger.json')
     .alias('h', 'help')
     .alias('s', 'source')
     .alias('u', 'url')
     .alias('o', 'outputpath')
+    .alias('t', 'templateDirectory')
     .describe('s', 'Path to the swagger.json file')
     .describe('u', 'URL of the swagger.json file')
     .describe('o', 'Path where to store the generated files');
@@ -45,6 +46,7 @@ else {
 }
 
 var outputdir = argv.outputpath || './output';
+var templatedir = argv.templateDirectory || '../templates';
 
 if (!fs.existsSync(outputdir)) {
     fs.mkdirSync(outputdir);
@@ -65,13 +67,13 @@ if (fromUrl) {
         }
 
         fs.writeFileSync(dest, body, 'utf-8');
-        var g = new genRef.Generator(dest, outputdir);
+        var g = new genRef.Generator(dest, outputdir, templatedir);
         g.Debug = true;
         g.generateAPIClient();
     });
 }
 else {
-    var g = new genRef.Generator(sourceFile, outputdir);
+    var g = new genRef.Generator(sourceFile, outputdir, templatedir);
     g.Debug = true;
     g.generateAPIClient();
 }
