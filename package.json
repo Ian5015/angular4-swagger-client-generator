@@ -1,6 +1,6 @@
 {
   "name": "Hocho",
-  "version": "0.1.14",
+  "version": "0.0.1",
   "description": "Angular 1.X REST API client generator from Swagger JSON with camel case settings",
   "homepage": "https://github.com/Ian5015/hocho",
   "main": "index.js",
